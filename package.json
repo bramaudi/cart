@@ -1,0 +1,23 @@
+{
+  "name": "nyemil",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html -p 8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bramaudi/ngemil.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bramaudi/ngemil/issues"
+  },
+  "homepage": "https://github.com/bramaudi/ngemil#readme",
+  "dependencies": {
+    "minite": "^0.1.16"
+  }
+}
