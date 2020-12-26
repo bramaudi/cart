@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/index.html -p 8080",
+    "dev": "parcel src/index.html --host=0.0.0.0 -p 8080",
     "build": "parcel build src/index.html"
   },
   "repository": {
