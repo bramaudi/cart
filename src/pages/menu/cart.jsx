@@ -32,15 +32,20 @@ export default ({ set, state }) => {
     })
     
     const pesan = `Hi ${name}!
-    
-    Terima kasih telah memesan, berikut menu yang sudah dipilih:
 
-    ${cart.list.map(item => item.count + ' ' + item.name + "\n")}
+Terima kasih telah memesan, berikut menu yang sudah dipilih:
 
-    Mohon ditunggu ya, akan kita konfirmasi kalau sudah sampai.
+${cart.list.map(item => {
+  if (item.count) {
+    return item.count + ' ' + item.name + "\n"
+  }
+})}
 
-    Terima Kasih!`
-    
+Jadi jumlah total semuanya Rp. ${cart.price}
+Mohon ditunggu ya, akan kita konfirmasi kalau sudah sampai.
+
+Terima Kasih!`
+
     liffSendMessage(pesan)
   }
 
