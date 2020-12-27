@@ -95,6 +95,7 @@ export default () => {
     state,
     view: (state, set) => {
       console.log('inside component');
+      handleGetName(set)
       
       const {
         cust,
