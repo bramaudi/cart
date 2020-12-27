@@ -1,6 +1,6 @@
 import './style.css'
 import { m } from 'minite'
-import { liffInit, liffLogin } from '../../liff'
+import { liffInit } from '../../liff'
 import Cart from './cart'
 
 liffInit()
@@ -14,7 +14,9 @@ liffInit()
         .catch((err) => {
           console.log('profile error', err);
         });
-    } else liffLogin()
+    } else {
+      window.location.href = '/'
+    }
   })
 	.catch(err => console.log('liff init fail', err))
 
