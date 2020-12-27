@@ -68,21 +68,24 @@ const state = {
 }
 
 const handleGetName = (set) => {
-  let firstRun = true
-
-  if (firstRun && liff.isLoggedIn()) {
-    liff.getProfile()
-      .then(profile => {
-        set('cust', profile.displayName)
-        firstRun = false
-      })
-      .catch((err) => {
-        console.log('profile error', err);
+  liffInit()
+    .then(() => {
+      if (liff.isLoggedIn()) {
+        liff.getProfile()
+          .then(profile => {
+            set('cust', profile.displayName)
+          })
+          .catch((err) => {
+            console.log('profile error', err);
+            window.location.href = '/'
+          });
+      } else {
         window.location.href = '/'
-      });
-  } else {
-    window.location.href = '/'
-  }
+      }
+    })
+    .catch(() => {
+      console.log('Failed to init LIFF');
+    })
 }
 
 const handleAddToCart = (set, item) => {
