@@ -4,6 +4,10 @@ import { liffLogin, liffOpenExternal } from '../../liff'
 import vector from '../../assets/images/undraw_cooking_lyxy.png'
 // import Link from '../../components/link'
 
+if (liff.isLoggedIn()) {
+	window.location.href = window.location.origin + '/#!/menu'
+}
+
 /** @jsx m */
 export default () => {
 	return {
