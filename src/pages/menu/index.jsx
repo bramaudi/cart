@@ -6,7 +6,7 @@ import Cart from './cart'
 liffInit()
   .then(() => {
     if (!liff.isLoggedIn()) {
-      window.location.href = '/'
+      liff.login();
     }
   })
   .catch(() => {
@@ -77,10 +77,7 @@ const handleGetName = (set) => {
           })
           .catch((err) => {
             console.log('profile error', err);
-            window.location.href = '/'
           });
-      } else {
-        window.location.href = '/'
       }
     })
     .catch(() => {

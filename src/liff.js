@@ -3,9 +3,7 @@ export const liffInit = () => liff.init({ liffId: '1655457217-XdEO0230' })
 export const liffLogin = () => {
   liffInit()
     .then(() => {
-      if (liff.isLoggedIn()) {
-        window.location.href = window.location.origin + '/#!/menu'
-      } else {
+      if (!liff.isLoggedIn()) {
         liff.login();
       }
     })
