@@ -1,15 +1,9 @@
-export const liffInit = () => {
-  return liff.init({ liffId: '1655457217-XdEO0230' })
-}
-
 export const liffLogin = () => {
-	liffInit().then(() => {
-    if (!liff.isLoggedIn()) {
-      liff.login();
-    } else {
-      window.location.href = '#!/menu'
-    }
-  })
+  if (!liff.isLoggedIn()) {
+    liff.login();
+  } else {
+    window.location.href = '#!/menu'
+  }
 }
 
 export const liffLogout = () => {
@@ -32,9 +26,9 @@ export const liffSendMessage = (text) => {
   } else {
     liff.sendMessages([{
       'type': 'text',
-      text: 'asasas'
+      text
     }]).then(function() {
-      window.alert('Message sent');
+      window.alert('Pesanan berhasil di checkout.');
     }).catch(function(error) {
       window.alert('Error sending message: ' + error);
     });
