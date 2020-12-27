@@ -58,7 +58,9 @@ const state = {
 }
 
 const handleGetName = (set) => {
-  liffInit()
+  let firstRun = true
+
+  firstRun && liffInit()
     .then(() => {
       console.log('initted');
       if (liff.isLoggedIn()) {
@@ -67,6 +69,7 @@ const handleGetName = (set) => {
           .then(profile => {
             console.log('profile');
             set('cust', profile.displayName)
+            firstRun = false
           })
           .catch((err) => {
             console.log('profile error', err);
@@ -94,7 +97,6 @@ export default () => {
   return {
     state,
     view: (state, set) => {
-      console.log('inside component');
       handleGetName(set)
       
       const {
