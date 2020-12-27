@@ -31,7 +31,7 @@ export default ({ set, state }) => {
       }
     })
     console.log(cart);
-    liffSendMessage(cart)
+    liffSendMessage(JSON.stringify(cart))
   }
 
   return (
