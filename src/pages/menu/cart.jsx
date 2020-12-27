@@ -31,14 +31,19 @@ export default ({ set, state }) => {
       }
     })
     
+    let daftar = ''
+    cart.list.map(item => {
+      if (item.count) {
+        daftar = daftar + `${item.count} - ${item.name} (Rp.${item.price})` + "\n"
+      }
+    })
     const pesan = `Hi ${name}!
 
 Terima kasih telah memesan, berikut menu yang sudah dipilih:
 
-${cart.list.map(item => item.count > 0 ? `${item.count} - ${item.name}
-` : '' )}
+${daftar}
 
-Jadi jumlah total semuanya Rp. ${cart.price}
+Jadi jumlah total semuanya Rp. ${cart.price}.
 Mohon ditunggu ya, akan kita konfirmasi kalau sudah sampai.
 
 Terima Kasih!`
