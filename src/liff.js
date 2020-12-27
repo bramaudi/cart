@@ -1,15 +1,15 @@
 export const liffLogin = () => {
-  if (!liff.isLoggedIn()) {
-    liff.login();
-  } else {
+  if (liff.isLoggedIn()) {
     window.location.href = window.location.origin + '/#!/menu'
+  } else {
+    liff.login();
   }
 }
 
 export const liffLogout = () => {
   if (liff.isLoggedIn()) {
     liff.logout();
-    window.location.href = '/'
+    window.location.reload()
   }
 }
 
