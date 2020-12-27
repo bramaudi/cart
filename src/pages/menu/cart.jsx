@@ -35,11 +35,8 @@ export default ({ set, state }) => {
 
 Terima kasih telah memesan, berikut menu yang sudah dipilih:
 
-${cart.list.map(item => {
-  if (item.count) {
-    return item.count + ' ' + item.name + "\n"
-  }
-})}
+${cart.list.map(item => item.count > 0 ? `${item.count} - ${item.name}
+` : '' )}
 
 Jadi jumlah total semuanya Rp. ${cart.price}
 Mohon ditunggu ya, akan kita konfirmasi kalau sudah sampai.
