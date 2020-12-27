@@ -10,7 +10,7 @@ export default () => {
 			return (
 				<section>
 					<h1>Selamat datang!</h1>
-					<div style={{ 'padding-right': '10rem' }}>
+					<div style={{ 'padding-right': '5vw' }}>
 						<p>Halo kak! yuk nyemil disini, nggak perlu ribet mikrin keluar rumah karena nanti kita yang antar.</p>
 						<p>Sebelum itu sebaiknya kenalan dulu yuk biar kita tau namanya! cukup masuk pakai akun <strong>Line</strong> aja loh..</p>
 					</div>

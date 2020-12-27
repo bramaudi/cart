@@ -72,7 +72,7 @@ svg {
 
 
 .cart-spacing {
-  margin-top: 5rem;
+  margin-top: 6rem;
 }
 
 .cart, .full-cart {
@@ -84,13 +84,13 @@ svg {
 
 .full-cart {
   top: 0;
-  width: 100%;
+  right: 0;
   height: 100%;
 }
 .full-cart .close {
   position: fixed;
-  top: 2rem;
-  right: 2rem;
+  top: .5rem;
+  right: 1rem;
   cursor: pointer;
 }
 .full-cart .close svg {
@@ -102,15 +102,17 @@ svg {
 
 .full-cart .list {
   height: calc(100vh - 12rem);
-  padding: 2rem;
+  padding: 2rem 0;
   overflow: auto;
 }
 .full-cart .list .list-item {
   display: flex;
   align-items: center;
   padding: .5rem 0;
-  margin-right: 5rem;
-  border-bottom: 1px dotted #aaa;
+  border-bottom: 1px dotted #bbbbbb;
+}
+.full-cart .list .list-item:hover {
+  border-bottom: 1px solid #222;
 }
 .full-cart .list .list-item span {
   font-size: 80%;
@@ -160,7 +162,7 @@ svg {
   font-size: large;
 }
 .cart .desc div {
-  margin: 0 1rem;
+  margin: 0 1rem 0 0;
 }
 .cart .desc div + div {
   margin: 0 1rem 0 auto;
