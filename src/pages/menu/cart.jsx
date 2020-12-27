@@ -5,7 +5,7 @@ import { liffSendMessage } from '../../liff'
 /** @jsx m */
 /** @jsxFrag 'x' */
 export default ({ set, state }) => {
-  const { foods, drinks, cartShow, cartPop } = state
+  const { foods, drinks, cartShow, cartPop, cust } = state
   const cart = [...foods, ...drinks]
   const cartTotal = cart.reduce((a, { count }) => a + count, 0)
   const cartPrice = cart.reduce((a, { price, count }) => a + (price * count), 0)
@@ -19,7 +19,7 @@ export default ({ set, state }) => {
     set()
   }
 
-  const handleCheckout = (list, total, price) => {
+  const handleCheckout = (list, total, price, name) => {
     const cart = {
       list: [],
       total,
@@ -30,8 +30,18 @@ export default ({ set, state }) => {
         cart.list.push(item)
       }
     })
-    console.log(cart);
-    liffSendMessage(JSON.stringify(cart))
+    
+    const pesan = `Hi ${name}!
+    
+    Terima kasih telah memesan, berikut menu yang sudah dipilih:
+
+    ${cart.list.map(item => item.count + ' ' + item.name + "\n")}
+
+    Mohon ditunggu ya, akan kita konfirmasi kalau sudah sampai.
+
+    Terima Kasih!`
+    
+    liffSendMessage(pesan)
   }
 
   return (
@@ -64,7 +74,7 @@ export default ({ set, state }) => {
             </div>
             <button
               className="button checkout"
-              onClick={() => handleCheckout(cart, cartTotal, cartPrice)}
+              onClick={() => handleCheckout(cart, cartTotal, cartPrice, cust)}
               >
               Checkout
               <svg fill="none" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
