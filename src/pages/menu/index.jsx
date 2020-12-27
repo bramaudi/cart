@@ -6,7 +6,7 @@ import Cart from './cart'
 liffInit()
   .then(() => {
     if (!liff.isLoggedIn()) {
-      liff.login();
+      window.location.href = window.location.origin + '/'
     }
   })
   .catch(() => {
