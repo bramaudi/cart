@@ -1,4 +1,4 @@
-const liffInit = () => liff.init({ liffId: '1655457217-XdEO0230' })
+export const liffInit = () => liff.init({ liffId: '1655457217-XdEO0230' })
 
 export const liffLogin = () => {
   liffInit()
