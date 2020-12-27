@@ -32,7 +32,7 @@ export const liffSendMessage = (text) => {
   } else {
     liff.sendMessages([{
       'type': 'text',
-      text
+      text: 'asasas'
     }]).then(function() {
       window.alert('Message sent');
     }).catch(function(error) {
