@@ -60,25 +60,20 @@ const state = {
 const handleGetName = (set) => {
   let firstRun = true
 
-  firstRun && liffInit()
-    .then(() => {
-      console.log('initted');
-      if (liff.isLoggedIn()) {
-        console.log('logged');
-        liff.getProfile()
-          .then(profile => {
-            console.log('profile');
-            set('cust', profile.displayName)
-            firstRun = false
-          })
-          .catch((err) => {
-            console.log('profile error', err);
-          });
-      } else {
-        window.location.href = '/'
-      }
-    })
-    .catch(err => console.log('liff init fail', err))
+  if (firstRun && liff.isLoggedIn()) {
+    console.log('logged');
+    liff.getProfile()
+      .then(profile => {
+        console.log('profile');
+        set('cust', profile.displayName)
+        firstRun = false
+      })
+      .catch((err) => {
+        console.log('profile error', err);
+      });
+  } else {
+    window.location.href = '/'
+  }
 }
 
 const handleAddToCart = (set, item) => {
