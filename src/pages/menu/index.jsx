@@ -70,6 +70,7 @@ const handleGetName = (set) => {
       })
       .catch((err) => {
         console.log('profile error', err);
+        window.location.href = '/'
       });
   } else {
     window.location.href = '/'
