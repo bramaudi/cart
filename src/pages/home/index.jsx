@@ -1,12 +1,16 @@
 import { m } from 'minite'
 import './style.css'
-import { liffLogin, liffOpenExternal } from '../../liff'
+import { liffInit, liffLogin, liffOpenExternal } from '../../liff'
 import vector from '../../assets/images/undraw_cooking_lyxy.png'
 // import Link from '../../components/link'
 
-if (liff.isLoggedIn()) {
-	window.location.href = window.location.origin + '/#!/menu'
-}
+liffInit()
+	.then(() => {
+		if (liff.isLoggedIn()) {
+			window.location.href = window.location.origin + '/#!/menu'
+		}
+	})
+	.catch(err => console.log('liff init fail', err))
 
 /** @jsx m */
 export default () => {
