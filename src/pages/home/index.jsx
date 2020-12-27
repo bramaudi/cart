@@ -4,14 +4,6 @@ import { liffLogin, liffOpenExternal } from '../../liff'
 import vector from '../../assets/images/undraw_cooking_lyxy.png'
 // import Link from '../../components/link'
 
-liff
-	.init({ liffId: '1655457217-XdEO0230' })
-	.then(() => {
-		if (liff.isLoggedIn()) {
-			window.location.href = window.location.origin + '/#!/menu'
-		}
-	})
-
 /** @jsx m */
 export default () => {
 	return {
