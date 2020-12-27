@@ -80,7 +80,7 @@ export default () => {
 
       return (
         <section>
-          <h1>Hi {cust}!</h1>
+          <h1>Hi {cust}! <button className="button keluar">Keluar</button></h1>
           <p>Yuk silahkan pilih dulu ya cemilannya:</p>
   
           <h5 className="subtitle">🍴 Makanan</h5>
