@@ -1,5 +1,5 @@
 export const liffInit = () => {
-  return window.liff.init({ liffId: '1655457217-XdEO0230' })
+  return liff.init({ liffId: '1655457217-XdEO0230' })
 }
 
 export const liffLogin = () => {
