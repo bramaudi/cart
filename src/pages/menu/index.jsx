@@ -1,6 +1,6 @@
 import './style.css'
 import { m } from 'minite'
-import { liffInit } from '../../liff'
+import { liffInit, liffLogout } from '../../liff'
 import Cart from './cart'
 
 const IconInfo = () => <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -104,7 +104,7 @@ export default () => {
 
       return (
         <section>
-          <h1>Hi {cust}! <button className="button keluar">Keluar</button></h1>
+          <h1>Hi {cust}! <button className="button keluar" onClick={liffLogout}>Keluar</button></h1>
           <p>Yuk silahkan pilih dulu ya cemilannya:</p>
   
           <h5 className="subtitle">🍴 Makanan</h5>
