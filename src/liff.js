@@ -1,16 +1,30 @@
+const liffInit = () => liff.init({ liffId: '1655457217-XdEO0230' })
+
 export const liffLogin = () => {
-  if (liff.isLoggedIn()) {
-    window.location.href = window.location.origin + '/#!/menu'
-  } else {
-    liff.login();
-  }
+  liffInit()
+    .then(() => {
+      if (liff.isLoggedIn()) {
+        window.location.href = window.location.origin + '/#!/menu'
+      } else {
+        liff.login();
+      }
+    })
+    .catch(() => {
+      console.log('Failed to init LIFF');
+    })
 }
 
 export const liffLogout = () => {
-  if (liff.isLoggedIn()) {
-    liff.logout();
-    window.location.reload()
-  }
+  liffInit()
+    .then(() => {
+      if (liff.isLoggedIn()) {
+        liff.logout();
+        window.location.reload()
+      }
+    })
+    .catch(() => {
+      console.log('Failed to init LIFF');
+    })
 }
 
 export const liffOpenExternal = (url) => {
