@@ -1,5 +1,6 @@
 import './style.css'
 import { m } from 'minite'
+import { liffSendMessage } from '../../liff'
 
 /** @jsx m */
 /** @jsxFrag 'x' */
@@ -30,6 +31,7 @@ export default ({ set, state }) => {
       }
     })
     console.log(cart);
+    liffSendMessage(cart)
   }
 
   return (

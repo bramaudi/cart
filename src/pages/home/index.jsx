@@ -1,7 +1,8 @@
 import { m } from 'minite'
 import './style.css'
+import { liffLogin, liffOpenExternal } from '../../liff'
 import vector from '../../assets/images/undraw_cooking_lyxy.png'
-import Link from '../../components/link'
+// import Link from '../../components/link'
 
 /** @jsx m */
 export default () => {
@@ -14,7 +15,8 @@ export default () => {
 						<p>Halo kak! yuk nyemil disini, nggak perlu ribet mikrin keluar rumah karena nanti kita yang antar.</p>
 						<p>Sebelum itu sebaiknya kenalan dulu yuk biar kita tau namanya! cukup masuk pakai akun <strong>Line</strong> aja loh..</p>
 					</div>
-					<Link className="masuk" url="/menu">Masuk</Link>
+					<button className="masuk" onClick={liffLogin}>Masuk</button>
+					<button className="external" onClick={() => liffOpenExternal(window.location)}>Buka di external browser</button>
 					<img className="vector" src={vector} alt="Ilustrasi" />
 				</section>
 			)
