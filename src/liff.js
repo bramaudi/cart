@@ -28,7 +28,7 @@ export const liffOpenExternal = (url) => {
 
 export const liffSendMessage = (text) => {
   if (!liff.isInClient()) {
-    sendAlertIfNotInClient();
+    window.alert('Maaf, tidak bisa melakukan checkout di luar LINE.')
   } else {
     liff.sendMessages([{
       'type': 'text',
