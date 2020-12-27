@@ -1,6 +1,6 @@
 import './style.css'
 import { m } from 'minite'
-import { liffInit, liffSendMessage } from '../../liff'
+import { liffSendMessage } from '../../liff'
 
 /** @jsx m */
 /** @jsxFrag 'x' */
@@ -31,9 +31,7 @@ export default ({ set, state }) => {
       }
     })
     console.log(cart);
-    liffInit().then(() => {
-      liffSendMessage(JSON.stringify(cart))
-    })
+    liffSendMessage(JSON.stringify(cart))
   }
 
   return (
