@@ -52,75 +52,84 @@ const state = {
       count: 0
     }
   ],
-  cart: [],
-  showCart: false
+  cartShow: false,
+  cartPop: false
 }
 
-const handleAddToCart = (set, cart, item) => {
+const handleAddToCart = (set, item) => {
   item.count += 1
-  cart.push(item)
-  set()
+
+  set('cartPop', true)
+  setTimeout(() => {
+    set('cartPop', false)
+  }, 250)
+
+  set() // dispatch all state changes
 }
 
 /** @jsx m */
 export default () => {
   return {
     state,
-    view: ({
-      cust,
-      foods,
-      drinks,
-      cart,
-      showCart
-    } = {}, set) => (
-      <section>
-        <h1>Hi {cust}!</h1>
-        <p>Yuk silahkan pilih dulu ya cemilannya:</p>
+    view: (state, set) => {
+      const {
+        cust,
+        foods,
+        drinks
+      } = state || {}
 
-        <Cart cart={cart} show={showCart} set={set} />
-
-        <h5 className="subtitle">🍴 Makanan</h5>
-        <div className="menus">
-          {foods.map(food => (
-            <div className="menu-item shadow">
-              <div className="title">
-                {food.name}
-                <div className="desc"><IconInfo /> {food.desc}</div>
+      return (
+        <section>
+          <h1>Hi {cust}!</h1>
+          <p>Yuk silahkan pilih dulu ya cemilannya:</p>
+  
+          <h5 className="subtitle">🍴 Makanan</h5>
+          <div className="menus">
+            {foods.map(food => (
+              <div className="menu-item shadow">
+                <div className="title">
+                  {food.name}
+                  <div className="desc"><IconInfo /> {food.desc}</div>
+                </div>
+                <div className="price">Rp.{food.price}</div>
+                <button
+                  className="button add"
+                  onClick={() => handleAddToCart(set, food)}
+                  >
+                  <svg fill="none" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                </button>
               </div>
-              <div className="price">Rp.{food.price}</div>
-              <button
-                className="button add"
-                onClick={() => handleAddToCart(set, cart, food)}
-                >
-                <svg fill="none" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
-              </button>
-            </div>
-          ))}
-        </div>
-
-
-        <h5 className="subtitle">🍸 Minuman</h5>
-        <div className="menus">
-          {drinks.map(drink => (
-            <div className="menu-item shadow">
-              <div className="title">
-                {drink.name}
-                <div className="desc"><IconInfo /> {drink.desc}</div>
+            ))}
+          </div>
+  
+  
+          <h5 className="subtitle">🍸 Minuman</h5>
+          <div className="menus">
+            {drinks.map(drink => (
+              <div className="menu-item shadow">
+                <div className="title">
+                  {drink.name}
+                  <div className="desc"><IconInfo /> {drink.desc}</div>
+                </div>
+                <div className="price">Rp.{drink.price}</div>
+                <button
+                  className="button add"
+                  onClick={() => handleAddToCart(set, drink)}
+                  >
+                  <svg fill="none" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                </button>
               </div>
-              <div className="price">Rp.{drink.price}</div>
-              <button
-                className="button add"
-                onClick={() => handleAddToCart(set, cart, drink)}
-                >
-                <svg fill="none" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
-              </button>
-            </div>
-          ))}
-        </div>
-
-        <div className="cart-spacing"></div>
-
-      </section>
-    )
+            ))}
+          </div>
+  
+          <Cart
+            state={state}
+            set={set} />
+  
+          <div className="cart-spacing"></div>
+  
+        </section>
+      )
+    }
   }
 }

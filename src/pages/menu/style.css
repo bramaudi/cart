@@ -12,9 +12,8 @@ svg {
 
 .shadow {
   box-shadow:
-  0 1.7px 5.3px rgba(0, 0, 0, 0.02),
-  0 5.6px 17.9px rgba(0, 0, 0, 0.03),
-  0 25px 80px rgba(0, 0, 0, 0.05)
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06)
 }
 
 .subtitle {
@@ -73,7 +72,7 @@ svg {
 
 
 .cart-spacing {
-  margin-top: 7rem;
+  margin-top: 5rem;
 }
 
 .cart, .full-cart {
@@ -88,6 +87,62 @@ svg {
   width: 100%;
   height: 100%;
 }
+.full-cart .close {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  cursor: pointer;
+}
+.full-cart .close svg {
+  width: 2rem;
+}
+.full-cart .close:hover {
+  transform: scale(1.25);
+}
+
+.full-cart .list {
+  height: calc(100vh - 12rem);
+  padding: 2rem;
+  overflow: auto;
+}
+.full-cart .list .list-item {
+  display: flex;
+  align-items: center;
+  padding: .5rem 0;
+  margin-right: 5rem;
+  border-bottom: 1px dotted #aaa;
+}
+.full-cart .list .list-item span {
+  font-size: 80%;
+  font-weight: bold;
+  margin-left: auto;
+}
+.full-cart .list .list-item .decrement {
+  padding: 0;
+  margin-left: .5rem;
+  border-radius: 100%;
+  background: tomato;
+}
+.full-cart .bill {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  margin: 2rem;
+}
+.full-cart .bill .checkout {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  padding: 0 1rem;
+  border-radius: .5rem;
+  background: #00b900;
+  color: white;
+}
+.full-cart .bill .checkout svg {
+  margin-left: .5rem;
+}
 
 .cart {
   bottom: 1rem;
@@ -97,11 +152,6 @@ svg {
   margin: 1rem 1rem 0;
   padding: 1rem 1.5rem;
   border-radius: .5rem;
-  box-shadow:
-  0 -21.8px 5.3px rgba(0, 0, 0, 0.028),
-  0 -7.1px 17.9px rgba(0, 0, 0, 0.042),
-  0 105px 80px rgba(0, 0, 0, 0.07)
-;
 }
 .cart .desc {
   width: 100%;
@@ -109,13 +159,25 @@ svg {
   align-items: center;
   font-size: large;
 }
+.cart .desc div {
+  margin: 0 1rem;
+}
 .cart .desc div + div {
   margin: 0 1rem 0 auto;
 }
-.cart .checkout {
+.cart .see-cart {
   display: inline-flex;
   padding: .5rem;
   margin-left: auto;
   border-radius: 100%;
   background: #00b900;
+}
+
+.pop {
+  animation: pop 0.25s ease-in-out;
+}
+@keyframes pop {
+  50%  {
+    transform: scale(1.25);
+  }
 }
