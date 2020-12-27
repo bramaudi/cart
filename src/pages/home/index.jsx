@@ -1,12 +1,16 @@
 import { m } from 'minite'
 import './style.css'
-import { liffInit, liffLogin, liffOpenExternal } from '../../liff'
+import { liffLogin, liffOpenExternal } from '../../liff'
 import vector from '../../assets/images/undraw_cooking_lyxy.png'
 // import Link from '../../components/link'
 
-if (liff.isLoggedIn()) {
-	window.location.href = window.location.origin + '/#!/menu'
-}
+liff
+	.init({ liffId: '1655457217-XdEO0230' })
+	.then(() => {
+		if (liff.isLoggedIn()) {
+			window.location.href = window.location.origin + '/#!/menu'
+		}
+	})
 
 /** @jsx m */
 export default () => {
