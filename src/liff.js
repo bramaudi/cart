@@ -2,14 +2,14 @@ export const liffLogin = () => {
   if (!liff.isLoggedIn()) {
     liff.login();
   } else {
-    window.location.href = '#!/menu'
+    window.location.href = window.location.origin + '/#!/menu'
   }
 }
 
 export const liffLogout = () => {
   if (liff.isLoggedIn()) {
     liff.logout();
-    window.location.reload();
+    window.location.href = '/'
   }
 }
 
