@@ -20,7 +20,7 @@ export default () => {
 						<p>Sebelum itu sebaiknya kenalan dulu yuk biar kita tau namanya! cukup masuk pakai akun <strong>Line</strong> aja loh..</p>
 					</div>
 					<button className="masuk" onClick={liffLogin}>Masuk</button>
-					<button className="external" onClick={() => liffOpenExternal(window.location)}>Buka di external browser</button>
+					<button className="external" onClick={() => liffOpenExternal(window.location.origin)}>Buka di external browser</button>
 					<img className="vector" src={vector} alt="Ilustrasi" />
 				</section>
 			)
