@@ -57,6 +57,27 @@ const state = {
   cartPop: false
 }
 
+const handleGetName = (set) => {
+  liffInit()
+    .then(() => {
+      console.log('initted');
+      if (liff.isLoggedIn()) {
+        console.log('logged');
+        liff.getProfile()
+          .then(profile => {
+            console.log('profile');
+            set('cust', profile.displayName)
+          })
+          .catch((err) => {
+            console.log('profile error', err);
+          });
+      } else {
+        window.location.href = '/'
+      }
+    })
+    .catch(err => console.log('liff init fail', err))
+}
+
 const handleAddToCart = (set, item) => {
   item.count += 1
   
@@ -73,24 +94,8 @@ export default () => {
   return {
     state,
     view: (state, set) => {
-      // Initialize inside component
-      liffInit()
-        .then(() => {
-          if (liff.isLoggedIn()) {
-            liff.getProfile()
-              .then(profile => {
-                console.log('profile', profile);
-                set('cust', profile.displayName)
-              })
-              .catch((err) => {
-                console.log('profile error', err);
-              });
-          } else {
-            window.location.href = '/'
-          }
-        })
-        .catch(err => console.log('liff init fail', err))
-  
+      console.log('inside component');
+      
       const {
         cust,
         foods,
