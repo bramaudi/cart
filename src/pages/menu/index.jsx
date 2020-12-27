@@ -3,27 +3,10 @@ import { m } from 'minite'
 import { liffInit } from '../../liff'
 import Cart from './cart'
 
-liffInit()
-  .then(() => {
-    if (liff.isLoggedIn()) {
-      liff.getProfile()
-        .then(profile => {
-          console.log('profile', profile);
-          custName = profile.displayName
-        })
-        .catch((err) => {
-          console.log('profile error', err);
-        });
-    } else {
-      window.location.href = '/'
-    }
-  })
-	.catch(err => console.log('liff init fail', err))
-
 const IconInfo = () => <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
 
 const state = {
-  cust: custName || 'Customer',
+  cust: 'Customer',
   foods: [
     {
       name: 'Nasi Goreng Milenial',
@@ -76,12 +59,12 @@ const state = {
 
 const handleAddToCart = (set, item) => {
   item.count += 1
-
+  
   set('cartPop', true)
   setTimeout(() => {
     set('cartPop', false)
   }, 250)
-
+  
   set() // dispatch all state changes
 }
 
@@ -90,6 +73,24 @@ export default () => {
   return {
     state,
     view: (state, set) => {
+      // Initialize inside component
+      liffInit()
+        .then(() => {
+          if (liff.isLoggedIn()) {
+            liff.getProfile()
+              .then(profile => {
+                console.log('profile', profile);
+                set('cust', profile.displayName)
+              })
+              .catch((err) => {
+                console.log('profile error', err);
+              });
+          } else {
+            window.location.href = '/'
+          }
+        })
+        .catch(err => console.log('liff init fail', err))
+  
       const {
         cust,
         foods,
