@@ -5,7 +5,7 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{}],"ZeoQ":[function(require,module,exports) {
 
 },{}],"qhLw":[function(require,module,exports) {
-module.exports="/undraw_cooking_lyxy.b93032c0.svg";
+module.exports="undraw_cooking_lyxy.b93032c0.svg";
 },{}],"ZVtF":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var t=require("minite");function r(t,r){return i(t)||a(t,r)||n(t,r)||e()}function e(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}function n(t,r){if(t){if("string"==typeof t)return o(t,r);var e=Object.prototype.toString.call(t).slice(8,-1);return"Object"===e&&t.constructor&&(e=t.constructor.name),"Map"===e||"Set"===e?Array.from(t):"Arguments"===e||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(e)?o(t,r):void 0}}function o(t,r){(null==r||r>t.length)&&(r=t.length);for(var e=0,n=new Array(r);e<r;e++)n[e]=t[e];return n}function a(t,r){if("undefined"!=typeof Symbol&&Symbol.iterator in Object(t)){var e=[],n=!0,o=!1,a=void 0;try{for(var i,u=t[Symbol.iterator]();!(n=(i=u.next()).done)&&(e.push(i.value),!r||e.length!==r);n=!0);}catch(l){o=!0,a=l}finally{try{n||null==u.return||u.return()}finally{if(o)throw a}}return e}}function i(t){if(Array.isArray(t))return t}var u=function(e,n){var o=r(n,1)[0],a=e.url,i=e.title,u=e.className;return(0,t.m)("a",{href:"#!".concat(a),title:i,className:u},o)};exports.default=u;
 },{"minite":"SjoH"}],"ncNo":[function(require,module,exports) {
@@ -25,4 +25,4 @@ module.exports=function(n){return new Promise(function(e,o){var r=document.creat
 },{}],0:[function(require,module,exports) {
 var b=require("TUK3");b.register("css",require("dZuk"));b.register("js",require("Yi9z"));
 },{}]},{},[0,"epB2"], null)
-//# sourceMappingURL=/main.f22271e5.js.map
+//# sourceMappingURL=main.f22271e5.js.map
