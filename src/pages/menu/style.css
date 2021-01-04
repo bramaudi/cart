@@ -27,7 +27,7 @@ svg {
 }
 
 .subtitle {
-  margin: 5rem 0 2rem;
+  margin: 5rem 0 2rem -1rem;
   font-weight: normal;
   font-size: x-large;
   /* border-bottom: 1px solid #cccccc; */
