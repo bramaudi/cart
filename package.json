@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/bramaudi/ngemil#readme",
   "dependencies": {
-    "minite": "^1.0.0"
+    "minite": "^1.0.1"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4"

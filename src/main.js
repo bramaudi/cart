@@ -1,5 +1,5 @@
-import { render } from '../minite/src/index'
-import router from '../minite/router/src/index'
+import { render } from 'minite'
+import router from 'minite/router'
 import Home from './pages/home'
 import NotFound from './pages/404'
 

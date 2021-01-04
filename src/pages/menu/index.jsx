@@ -1,5 +1,5 @@
 import './style.css'
-import { m, useState } from '../../../minite/src/index'
+import { m, useState } from 'minite'
 import vector from '../../assets/images/undraw_empty_cart_co35.svg'
 import listFood from './foods'
 import listDrink from './drinks'

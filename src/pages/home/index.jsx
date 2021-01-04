@@ -1,4 +1,4 @@
-import { m } from '../../../minite/src/index'
+import { m } from 'minite'
 import './style.css'
 import vector from '../../assets/images/undraw_cooking_lyxy.svg'
 import Link from '../../components/link'
