@@ -21,11 +21,12 @@
  */
 
 body {
-  max-width: 800px;
+  /* max-width: 800px; */
   margin: auto;
   font-family: sans-serif;
   line-height: 1.65;
   color: #353535;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /**

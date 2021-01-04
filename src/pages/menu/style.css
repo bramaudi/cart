@@ -4,7 +4,7 @@
 	display: block;
 	margin: 0;
 	width: 40%;
-	max-width: 600px;
+	max-width: 250px;
 	opacity: 0.5;
 }
 
@@ -20,22 +20,44 @@ svg {
   border: none;
 }
 
-.shadow {
+/* .shadow {
   box-shadow:
     0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06)
-}
+} */
 
 .subtitle {
-  margin: 5rem 0 2rem -1rem;
-  font-weight: normal;
+  display: inline-block;
+  margin: 2rem .5rem .5rem;
+  padding: 0 .5rem;
+  font-weight: bold;
   font-size: x-large;
+  color: #fff;
   /* border-bottom: 1px solid #cccccc; */
+}
+
+.divider {
+  position: absolute;
+  left: 0;
+  right: 0;
+  clip-path: polygon(0% 27.5%, 0% 102.5%, 70.49% 112.28%);
+  height: 5rem;
+  background: #71aa71;
+}
+
+.menu-wrapper {
+  margin: 6rem -3rem 0;
+  padding: 0;
+  background: #71aa71;
+}
+.menu-container {
+  max-width: 600px;
+  margin: auto;
 }
 
 .menus {
   padding: 0;
-  margin: 0 -2rem;
+  margin: 0 .5rem;
 }
 
 .menu-item {
@@ -82,8 +104,10 @@ svg {
 
 
 .cart-spacing {
-  margin-top: 6rem;
+  padding-top: 8rem;
+  margin: 0 0 -3rem;
 }
+
 
 .cart, .full-cart {
   position: fixed;
@@ -152,6 +176,9 @@ svg {
   background: #00b900;
   color: white;
 }
+.full-cart .bill .checkout:hover {
+  background: #026f02;
+}
 .full-cart .bill .checkout svg {
   margin-right: .5rem;
 }
@@ -183,6 +210,9 @@ svg {
   margin-left: auto;
   border-radius: 100%;
   background: #00b900;
+}
+.cart .see-cart:hover {
+  background: #026f02;
 }
 
 .pop {
