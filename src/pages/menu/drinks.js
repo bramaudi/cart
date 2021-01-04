@@ -1,13 +1,13 @@
 export default [
   {
     name: 'Es Teh Manis',
-    desc: 'Ga usah manis² yang penting setia',
+    desc: 'Ga manis² yang penting setia',
     price: 1000,
     count: 0
   },
   {
     name: 'Es Teh Gula Pisah',
-    desc: 'Pisah-nya ngga terlalu jauh²',
+    desc: 'Pisah-nya ngga terlalu jauh',
     price: 1000,
     count: 0
   },
